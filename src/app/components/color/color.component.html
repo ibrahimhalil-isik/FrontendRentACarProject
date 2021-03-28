@@ -1,0 +1,10 @@
+<header><b>Renkler</b></header>
+<ul class="list-group">
+  <tr>
+    <th>-   Id</th>
+    <th>-  Renk</th>
+  </tr>
+  <li *ngFor="let color of colors" class="list-group-item">
+    {{ color.colorId }} - {{ color.colorName }}
+  </li>
+</ul>

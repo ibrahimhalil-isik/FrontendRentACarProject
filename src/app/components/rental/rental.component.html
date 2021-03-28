@@ -1,0 +1,39 @@
+<button  *ngIf="dataLoaded==false" class="btn btn-primary" type="button" disabled>
+    <span
+      class="spinner-border spinner-border-sm"
+      role="status"
+      aria-hidden="true"
+    ></span>
+    Biraz Sabırlı Davran Kuzumm..
+  </button>
+  <br />
+<header><b>Kiralamalar</b></header>
+
+<table  *ngIf="dataLoaded==true" class="table">
+  <thead>
+    <tr>
+      <th>Id</th>
+      <th>Müşteri Adı</th>
+      <th>Müşteri Soyadı</th>
+      <th>Araba Adı</th>
+      <th>Marka</th>
+      <th>Renk</th>
+      <th>Şehir</th>
+      <th>Kiralanma Tarihi</th>
+      <th>Teslim Tarihi</th>
+    </tr>
+  </thead>
+  <tr *ngFor="let rental of rentals">
+    <td>{{ rental.rentalId }}</td>
+    <td>{{ rental.firstName }}</td>
+    <td>{{ rental.lastName }}</td>
+    <td>{{ rental.carName }}</td>
+    <td>{{ rental.brandName }}</td>
+    <td>{{ rental.colorName }}</td>
+    <td>{{ rental.companyName}}</td>
+    <td>{{ rental.rentDate }}</td>
+    <td>{{ rental.returnDate }}</td>
+  </tr>
+</table>
+
+

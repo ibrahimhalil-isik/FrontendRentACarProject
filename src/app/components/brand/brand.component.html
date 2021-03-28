@@ -1,0 +1,50 @@
+<button  *ngIf="dataLoaded==false" class="btn btn-primary" type="button" disabled>
+  <span
+    class="spinner-border spinner-border-sm"
+    role="status"
+    aria-hidden="true"
+  ></span>
+  Yükleniyor..
+</button>
+<br />
+<header><b>MARKALAR</b></header>
+
+<table  *ngIf="dataLoaded==true" class="table">
+<thead>
+  <tr>
+    <th>Id</th>
+    <th>Marka</th>
+  </tr>
+</thead>
+<tr *ngFor="let brand of brands">
+  <td>{{ brand.brandId }}</td>
+  <td>{{ brand.brandName }}</td>
+</tr>
+</table>
+
+
+
+<!-- <header><b>Marka</b></header>
+<ol class="list-group list-group-numbered">
+    <li class="list-group-item d-flex justify-content-between align-items-start">
+      <div class="ms-2 me-auto">
+        <div class="fw-bold">Subheading</div>
+        Cras justo odio
+      </div>
+      <span class="badge bg-primary rounded-pill">14</span>
+    </li>
+    <li class="list-group-item d-flex justify-content-between align-items-start">
+      <div class="ms-2 me-auto">
+        <div class="fw-bold">Subheading</div>
+        Cras justo odio
+      </div>
+      <span class="badge bg-primary rounded-pill">14</span>
+    </li>
+    <li class="list-group-item d-flex justify-content-between align-items-start">
+      <div class="ms-2 me-auto">
+        <div class="fw-bold">Subheading</div>
+        Cras justo odio
+      </div>
+      <span class="badge bg-primary rounded-pill">14</span>
+    </li>
+  </ol> -->

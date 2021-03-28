@@ -1,0 +1,23 @@
+<button  *ngIf="dataLoaded==false" class="btn btn-primary" type="button" disabled>
+    <span
+      class="spinner-border spinner-border-sm"
+      role="status"
+      aria-hidden="true"
+    ></span>
+    Yükleniyor..
+  </button>
+  <br />
+  
+  <table  *ngIf="dataLoaded==true" class="table">
+    <header><b>Müşteriler</b></header>
+  <thead>
+    <tr>
+      <th>Id</th>
+      <th>Şehir</th>
+    </tr>
+  </thead>
+  <tr *ngFor="let customer of customers">
+    <td>{{ customer.customerId }}</td>
+    <td>{{ customer.companyName }}</td>
+  </tr>
+  </table>
