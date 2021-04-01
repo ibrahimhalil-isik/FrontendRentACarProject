@@ -1,20 +1,34 @@
 <header><b>Renkler</b></header>
-
+<div class="mb-3">
+  <label for="filterText" class="form-label">Renk Ara</label>
+  <input
+    type="text"
+    [(ngModel)]="filterText"
+    class="form-control"
+    id="filterText"
+    placeholder="Bulmak istediğiniz rengi girin"
+  />
+</div>
+<div *ngIf="filterText" class="alert alert-success">
+  {{ filterText }} aranıyor.
+</div>
 <ul class="list-group">
-  <li 
-  *ngIf="dataLoaded == true"
-  (click)="clearCurrentColor()"
-  [class]="getAllColorClass()" 
-  routerLink="/cars">
-  Tüm Renkler
+  <li
+    *ngIf="dataLoaded == true"
+    (click)="clearCurrentColor()"
+    [class]="getAllColorClass()"
+    routerLink="/cars"
+  >
+    Tüm Renkler
   </li>
+
   <li
     (click)="setCurrentColor(color)"
     routerLink="/cars/color/{{ color.colorId }}"
-    *ngFor="let color of colors"
+    *ngFor="let color of colors | colorFilterPipe: filterText"
     [class]="getCurrentColorClass(color)"
   >
-  {{ color.colorName }}
+    {{ color.colorName }}
   </li>
 </ul>
 

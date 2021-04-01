@@ -7,8 +7,30 @@
     Biraz Sabırlı Davran Kuzumm..
   </button>
   <br />
+  <select class="form-select form-select-lg mb-3" aria-label=".form-select-lg example">
+    <option selected>Markalar</option>
+    <option ></option>
+  </select>
+  <select class="form-select form-select-lg mb-3" aria-label=".form-select-lg example">
+    <option selected>Renkler</option>
+    <option value="1">One</option>
+    <option value="2">Two</option>
+    <option value="3">Three</option>
+  </select>
 <header><b>ARABALAR</b></header>
-
+<div class="mb-3">
+  <label for="filterText" class="form-label">Araba Ara</label>
+  <input
+    type="text"
+    [(ngModel)]="filterText"
+    class="form-control"
+    id="filterText"
+    placeholder="Bulmak istediğiniz Arabayı girin"
+  />
+</div>
+<div *ngIf="filterText" class="alert alert-success">
+  {{ filterText }} aranıyor.
+</div>
 <table  *ngIf="dataLoaded==true" class="table">
   <thead>
     <tr >
@@ -22,14 +44,15 @@
       <th>Açıklama</th>
     </tr>
   </thead>
-  <tr *ngFor="let car of cars">
+  <tr *ngFor="let car of cars | carFilterPipe: filterText">
     <td><b>*</b></td>
     <td>{{ car.carId }}</td>
     <td>{{ car.carName }}</td>
     <td>{{ car.brandName }}</td>
     <td>{{ car.colorName }}</td>
-    <td>{{ car.dailyPrice }}</td>
+    <td>{{ car.dailyPrice | currency }}</td>
     <td>{{ car.modelYear }}</td>
     <td>{{ car.description }}</td>
+    <td><button type="button" class="btn btn-info" routerLink="/cars/carDetail/{{car.carId}}">Detay</button></td>
   </tr>
 </table>
