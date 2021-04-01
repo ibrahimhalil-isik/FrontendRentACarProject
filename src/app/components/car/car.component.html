@@ -11,7 +11,8 @@
 
 <table  *ngIf="dataLoaded==true" class="table">
   <thead>
-    <tr>
+    <tr >
+      <th>  </th>
       <th>Id</th>
       <th>Araba Adı</th>
       <th>Marka</th>
@@ -22,6 +23,7 @@
     </tr>
   </thead>
   <tr *ngFor="let car of cars">
+    <td><b>*</b></td>
     <td>{{ car.carId }}</td>
     <td>{{ car.carName }}</td>
     <td>{{ car.brandName }}</td>
