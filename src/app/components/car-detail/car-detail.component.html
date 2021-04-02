@@ -1,28 +1,68 @@
-<!-- <div
-          *ngFor="let image of images; let i = index"
-        >
-          <img
-            src="{{ imageUrl }}/{{ carImage.imagePath }}"
-            class="d-block w-100"
-            alt="..."
-            style="height: 100%; object-fit: cover"
-          />
-</div> -->
-
-<div
-      class="carousel-inner d-flex"
-      style="height: 70vh; width: 80vh; margin-left: 18vh"
+<div class="card">
+  <div class="card-body">
+    <div
+      id="carouselExampleIndicators"
+      class="carousel slide"
+      data-bs-ride="carousel"
     >
-      <div
+      <div class="carousel-inner">
+        <div
         *ngFor="let carImage of carImages; index as i; first as firstImage"
         class="carousel-item align-self-center"
         [ngClass]="{ active: firstImage }"
         style="height: 50%; width: 50%"
       >
-        <img
-          src="{{ imageUrl }}{{ carImage.imagePath }}"
-          class="d-block w-100"
-            alt="..."
-          style="height: 100%; width: 100%"
-        />
+      <img
+      src="{{ imageUrl }}{{ carImage.imagePath }}"
+      class="d-block w-100"
+        alt="..."
+      style="height: 100%; width: 100%"
+    />
       </div>
+      </div>   
+    </div>
+<div>
+<button
+        class="carousel-control-prev"
+        type="button"
+        data-bs-target="#carouselExampleIndicators"
+        data-bs-slide="prev"
+      >
+        <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+        <span class="visually-hidden">Previous</span>
+      </button>
+      <button
+        class="carousel-control-next"
+        type="button"
+        data-bs-target="#carouselExampleIndicators"
+        data-bs-slide="next"
+      >
+        <span class="carousel-control-next-icon" aria-hidden="true"></span>
+        <span class="visually-hidden">Next</span>
+      </button>
+    </div>
+  </div>
+</div>
+
+<div class="row">
+  <div class="col-md-6">
+    <button
+      routerLink="/cars"
+      (click)="getBack()"
+      type="button"
+      aria-current="true"
+      class="btn btn-outline-danger"
+    >
+     Geri
+    </button>
+  </div>
+  
+  <div class="col-md-6">
+    <button
+      type="button"
+      aria-current="true"
+      class="btn btn-outline-success"
+    >
+      Kirala
+    </button>
+  </div>

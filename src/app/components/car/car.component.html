@@ -7,16 +7,6 @@
     Biraz Sabırlı Davran Kuzumm..
   </button>
   <br />
-  <select class="form-select form-select-lg mb-3" aria-label=".form-select-lg example">
-    <option selected>Markalar</option>
-    <option ></option>
-  </select>
-  <select class="form-select form-select-lg mb-3" aria-label=".form-select-lg example">
-    <option selected>Renkler</option>
-    <option value="1">One</option>
-    <option value="2">Two</option>
-    <option value="3">Three</option>
-  </select>
 <header><b>ARABALAR</b></header>
 <div class="mb-3">
   <label for="filterText" class="form-label">Araba Ara</label>
@@ -33,19 +23,54 @@
 </div>
 <table  *ngIf="dataLoaded==true" class="table">
   <thead>
-    <tr >
-      <th>  </th>
-      <th>Id</th>
-      <th>Araba Adı</th>
-      <th>Marka</th>
-      <th>Renk</th>
-      <th>Fiyat</th>
-      <th>Model</th>
-      <th>Açıklama</th>
+    <tr>
+      <th
+        scope="col"
+        style="background-color: rgb(174, 204, 214); border-radius: 10px"
+      >
+      Id
+      </th>
+      <th
+        scope="col"
+        style="background-color: rgb(148, 199, 218); border-radius: 10px"
+      >
+      Araba
+      </th>
+      <th
+        scope="col"
+        style="background-color: rgb(146, 214, 236); border-radius: 10px"
+      >
+      Marka
+      </th>
+      <th
+        scope="col"
+        style="background-color: rgb(116, 207, 238); border-radius: 10px"
+      >
+      Renk
+      </th>
+      <th
+        scope="col"
+        style="background-color: rgb(116, 207, 238); border-radius: 10px"
+      >
+      Fiyat
+      </th>
+      <th
+        scope="col"
+        style="background-color: rgb(116, 207, 238); border-radius: 10px"
+      >
+      Model
+      </th>
+      <th
+        scope="col"
+        style="background-color: rgb(116, 207, 238); border-radius: 10px"
+      >
+      Açıklama
+      </th>
     </tr>
   </thead>
+  <tbody>
   <tr *ngFor="let car of cars | carFilterPipe: filterText">
-    <td><b>*</b></td>
+    <!-- <td><b>*</b></td> -->
     <td>{{ car.carId }}</td>
     <td>{{ car.carName }}</td>
     <td>{{ car.brandName }}</td>
@@ -55,4 +80,5 @@
     <td>{{ car.description }}</td>
     <td><button type="button" class="btn btn-info" routerLink="/cars/carDetail/{{car.carId}}">Detay</button></td>
   </tr>
+</tbody>
 </table>

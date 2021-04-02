@@ -1,0 +1,48 @@
+<header><b>Marka Ara</b></header>
+<div class="row">
+  <div class="col-md-6">
+    <select
+      class="form-select"
+      [(ngModel)]="brandIdFilter"
+      aria-label=".form-select-lg example"
+    >
+      <option
+        *ngFor="let brand of brands"
+        [value]="brand.brandId"
+        [selected]="getSelectedBrand(brand.brandId)"
+      >
+        {{ brand.brandName }}
+      </option>
+    </select>
+  </div>
+  <div class="col-md-4">
+    <div class="btn-group">
+      <button
+        routerLink="/cars/filter/{{ brandIdFilter }}/{{ colorIdFilter }}"
+        type="button"
+        class="btn btn-warning"
+      >
+        Filitrele
+      </button>
+    </div>
+  </div>
+  <header><b>Renk Ara</b></header>
+  <div class="col-md-6">
+    <select class="form-select" [(ngModel)]="colorIdFilter">
+      <option
+        *ngFor="let color of colors"
+        [value]="color.colorId"
+        [selected]="getSelectedColor(color.colorId)"
+      >
+        {{ color.colorName }}
+      </option>
+    </select>
+  </div>
+  <div class="col-md-4">
+    <div class="btn-group">
+      <button routerLink="/cars" type="button" class="btn btn-danger">
+        Clean
+      </button>
+    </div>
+  </div>
+</div>
