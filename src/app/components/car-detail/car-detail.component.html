@@ -1,68 +1,198 @@
-<div class="card">
-  <div class="card-body">
-    <div
-      id="carouselExampleIndicators"
-      class="carousel slide"
-      data-bs-ride="carousel"
-    >
-      <div class="carousel-inner">
-        <div
-        *ngFor="let carImage of carImages; index as i; first as firstImage"
-        class="carousel-item align-self-center"
-        [ngClass]="{ active: firstImage }"
-        style="height: 50%; width: 50%"
+<div class="container" style="padding-top: 1%">
+  <div class="row">
+    <div class="card mb-3" style="padding-top: 1%">
+      <div
+        id="carouselExampleControls"
+        class="carousel slide"
+        data-bs-ride="carousel"
       >
-      <img
-      src="{{ imageUrl }}{{ carImage.imagePath }}"
-      class="d-block w-100"
-        alt="..."
-      style="height: 100%; width: 100%"
-    />
+        <div class="carousel-inner">
+          <div
+            *ngFor="let carImage of carImages; index as i; first as firstImage"
+            class="carousel-item align-self-center"
+            [ngClass]="{ active: firstImage }"
+            style="height: 50%; width: 50%"
+          >
+            <img
+              src="{{ imageUrl }}{{ carImage.imagePath }}"
+              class="d-block w-100"
+              alt="..."
+              style="height: 100%; width: 100%"
+            />
+          </div>
+        </div>
+        <button
+          class="carousel-control-prev"
+          type="button"
+          data-bs-target="#carouselExampleControls"
+          data-bs-slide="prev"
+        >
+          <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+          <span class="visually-hidden">Geri</span>
+        </button>
+        <button
+          class="carousel-control-next"
+          type="button"
+          data-bs-target="#carouselExampleControls"
+          data-bs-slide="next"
+        >
+          <span class="carousel-control-next-icon" aria-hidden="true"></span>
+          <span class="visually-hidden">İleri</span>
+        </button>
       </div>
-      </div>   
-    </div>
-<div>
-<button
-        class="carousel-control-prev"
-        type="button"
-        data-bs-target="#carouselExampleIndicators"
-        data-bs-slide="prev"
-      >
-        <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-        <span class="visually-hidden">Previous</span>
-      </button>
-      <button
-        class="carousel-control-next"
-        type="button"
-        data-bs-target="#carouselExampleIndicators"
-        data-bs-slide="next"
-      >
-        <span class="carousel-control-next-icon" aria-hidden="true"></span>
-        <span class="visually-hidden">Next</span>
-      </button>
+      <div class="card-body">
+        <h5 class="card-title">
+          <li class="list-group-item list-group-item-info">
+            Araba Adı : {{ carx.carName }}
+          </li>
+        </h5>
+        <p class="card-text">
+          <li class="list-group-item list-group-item-primary">
+            Marka : {{ carx.brandName }}
+          </li>
+          <li class="list-group-item list-group-item-primary">
+            Renk : {{ carx.colorName }}
+          </li>
+          <li class="list-group-item list-group-item-primary">
+            Model : {{ carx.modelYear }}
+          </li>
+          <li class="list-group-item list-group-item-primary">
+            Günlük fiyat : {{ carx.dailyPrice | currency: "₺" }}
+          </li>
+          <li class="list-group-item list-group-item-primary">
+            Açıklama : {{ carx.description }}
+          </li>
+          <li>
+            <div class="row">
+              <div class="col-md-6">
+                <button
+                  routerLink="/cars"
+                  (click)="getBack()"
+                  type="button"
+                  aria-current="true"
+                  class="btn btn-outline-danger"
+                >
+                  Geri
+                </button>
+              </div>
+              <div class="col-md-6">
+                <button
+                  routerLink=""
+                  style="width: 100%"
+                  type="button"
+                  aria-current="true"
+                  class="btn btn-success"
+                >
+                  Kirala
+                </button>
+              </div>
+            </div>
+          </li>
+        </p>
+      </div>
+  <div class="row" style="padding-top: 1%">
+    <div class="accordion" id="accordionExample">
+      <div class="accordion-item">
+        <h2 class="accordion-header" id="headingOne">
+          <button
+            class="accordion-button"
+            type="button"
+            data-bs-toggle="collapse"
+            data-bs-target="#collapseOne"
+            aria-expanded="true"
+            aria-controls="collapseOne"
+          >
+            Araç Kiralama Detayları
+          </button>
+        </h2>
+        <div
+          id="collapseOne"
+          class="accordion-collapse collapse show"
+          aria-labelledby="headingOne"
+          data-bs-parent="#accordionExample"
+        >
+          <div class="accordion-body">
+            <table class="table table-success table-striped">
+              <thead>
+                <tr>
+                  <th
+                    scope="col"
+                    style="
+                      background-color: rgb(174, 204, 214);
+                      border-radius: 10px;
+                    "
+                  >
+                    Araba
+                  </th>
+                  <th
+                    scope="col"
+                    style="
+                      background-color: rgb(148, 199, 218);
+                      border-radius: 10px;
+                    "
+                  >
+                    Marka
+                  </th>
+                  <th
+                    scope="col"
+                    style="
+                      background-color: rgb(146, 214, 236);
+                      border-radius: 10px;
+                    "
+                  >
+                    Renk
+                  </th>
+                  <th
+                    scope="col"
+                    style="
+                      background-color: rgb(116, 207, 238);
+                      border-radius: 10px;
+                    "
+                  >
+                    İsim
+                  </th>
+                  <th
+                    scope="col"
+                    style="
+                      background-color: rgb(116, 207, 238);
+                      border-radius: 10px;
+                    "
+                  >
+                    Soyisim
+                  </th>
+                  <th
+                    scope="col"
+                    style="
+                      background-color: rgb(116, 207, 238);
+                      border-radius: 10px;
+                    "
+                  >
+                    Kiralama Tarihi
+                  </th>
+                  <th
+                    scope="col"
+                    style="
+                      background-color: rgb(116, 207, 238);
+                      border-radius: 10px;
+                    "
+                  >
+                    Teslim Tarihi
+                  </th>
+                </tr>
+              </thead>
+                <tr *ngFor="let rental of rentals">
+                  <td>{{ rental.carName }}</td>
+                  <td>{{ rental.firstName }}</td>
+                  <td>{{ rental.lastName }}</td>
+                  <td>{{ rental.brandName }}</td>
+                  <td>{{ rental.colorName }}</td>
+                  <td>{{ rental.rentDate }}</td>
+                  <td>{{ rental.returnDate }}</td>
+                </tr>
+            </table>
+          </div>
+        </div>
+      </div>
     </div>
   </div>
 </div>
-
-<div class="row">
-  <div class="col-md-6">
-    <button
-      routerLink="/cars"
-      (click)="getBack()"
-      type="button"
-      aria-current="true"
-      class="btn btn-outline-danger"
-    >
-     Geri
-    </button>
-  </div>
-  
-  <div class="col-md-6">
-    <button
-      type="button"
-      aria-current="true"
-      class="btn btn-outline-success"
-    >
-      Kirala
-    </button>
-  </div>

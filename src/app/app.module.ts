@@ -18,7 +18,8 @@ import { CarFilterPipePipe } from './pipes/car-filter-pipe.pipe';
 import { CarDetailComponent } from './components/car-detail/car-detail.component';
 import { CarFilterComponent } from './components/car-filter/car-filter.component';
 
-import {ToastrModule} from "ngx-toastr"
+import {ToastrModule} from "ngx-toastr";
+import { FooterComponent } from './components/footer/footer.component';
 
 
 @NgModule({
@@ -35,6 +36,7 @@ import {ToastrModule} from "ngx-toastr"
     CarFilterPipePipe,
     CarDetailComponent,
     CarFilterComponent,
+    FooterComponent,
   ],
   imports: [
     BrowserModule, 
