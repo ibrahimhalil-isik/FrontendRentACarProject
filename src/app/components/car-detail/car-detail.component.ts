@@ -16,7 +16,7 @@ import { RentalService } from 'src/app/services/rental/rental.service';
   styleUrls: ['./car-detail.component.css'],
 })
 export class CarDetailComponent implements OnInit {
-  cars: Car[];
+  cars: Car;
   carId: number;
   carImages: CarImage[];
   imageUrl: string = 'https://localhost:44305/';
@@ -56,8 +56,8 @@ export class CarDetailComponent implements OnInit {
   }
   getCarDetailsByCarId(carId: number) {
     this.carService.getCarDetailsByCarId(carId).subscribe((response) => {
-     this.cars = response.data;
-      console.log(response);
+     this.cars = response.data[0];
+      console.log(response.data);
     });
   }
 
@@ -75,7 +75,7 @@ export class CarDetailComponent implements OnInit {
 
   getCars() {
     this.carService.getCar().subscribe((response) => {
-      this.cars = response.data;
+      this.cars = response.data[0];
     });
   }
 
