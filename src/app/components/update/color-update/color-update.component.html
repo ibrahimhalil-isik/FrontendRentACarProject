@@ -1,0 +1,54 @@
+<div class="container">
+    <div class="content">
+      <div class="row">
+        <div class="col-md-3">
+          <br />
+          <app-car-filter></app-car-filter>
+          <br />
+          <app-brand></app-brand>
+          <br /><br />
+          <app-color></app-color>
+          <br /><br /><br />
+        </div>
+        <div class="col-md-7">
+          <div class="card">
+            <div class="card-header"><h5 class="title">Renk Güncelle</h5></div>
+            <div class="card-body">
+              <form [formGroup]="colorUpdateForm">
+                <div class="mb-3">
+                    <label for="colorId">Güncellenecek Rengin Id'si</label>
+                    <div class="form-group">
+                      <input
+                        type="number"
+                        id="colorId"
+                        formControlName="colorId"
+                        class="form-control"
+                        placeholder="Güncellenecek Rengin Id'si"
+                      />
+                    </div>
+                  </div>
+                <div class="mb-3">
+                  <label for="colorName">Yeni Renk</label>
+                  <div class="form-group">
+                    <input
+                      type="text"
+                      id="colorName"
+                      formControlName="colorName"
+                      class="form-control"
+                      placeholder="Yeni rengimiz ne olsun"
+                    />
+                  </div>
+                </div>                
+              </form>
+            </div>
+            <div class="card-footer">
+              <button class="btn btn-fill btn-success" (click)="update()">
+                Güncelle
+              </button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  

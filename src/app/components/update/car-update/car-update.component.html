@@ -1,0 +1,96 @@
+<div class="container">
+    <div class="content">
+        <div class="row">
+        <div class="col-md-3">  
+            <br>
+            <app-car-filter></app-car-filter>     
+            <br>
+            <app-brand></app-brand>  
+            <br><br>
+            <app-color></app-color> 
+            <br><br><br>
+          </div>
+        <div class="col-md-7">
+            <div class="card">
+                <div class="card-header"><h5 class="title">Araba Güncelle</h5></div>
+                <div class="card-body">
+                    <form [formGroup]="carUpdateForm">
+
+                        <div class="mb-3">
+                            <label for="carId">Güncellenecek Arabanın Id'si</label>
+                            <div class="form-group">
+                                <input type="number" 
+                                id="carId" 
+                                formControlName="carId" class="form-control" 
+                                placeholder="Güncellenecek Arabanın Id'si"/>
+                            </div>
+                        </div>
+
+                        <div class="mb-3">
+                            <label for="carName">Yeni Araba adı</label>
+                            <div class="form-group">
+                                <input type="text" 
+                                id="carName" 
+                                formControlName="carName" class="form-control" 
+                                placeholder="Yeni Araba adımız ne olsun"/>
+                            </div>
+                        </div>
+                       
+                        <div class="mb-3">
+                            <label for="brandId">Yeni Marka Id</label>
+                            <div class="form-group">
+                                <input type="number" 
+                                id="brandId" 
+                                formControlName="brandId" class="form-control" 
+                                placeholder="Marka Id"/>
+                            </div>
+                        </div>
+                       <div class="mb-3">
+                        <label for="colorId"> Yeni Renk Id</label>
+                        <div class="form-group">
+                            <input type="number" 
+                            id="colorId" 
+                            formControlName="colorId" class="form-control" 
+                            placeholder="Renk Id"/>
+                        </div>
+                       </div>
+                        <div  class="mb-3">
+                            <label for="dailyPrice">Arabanın Yeni Günlük Fiyatı</label>
+                            <div class="form-group">
+                                <input type="number" 
+                                id="dailyPrice" 
+                                formControlName="dailyPrice" class="form-control" 
+                                placeholder="Günlük Fiyat"/>
+                            </div>
+                        </div>
+                        <div  class="mb-3">
+                            <label for="modelYear">Arabanın Yeni Modeli</label>
+                            <div class="form-group">
+                                <input type="number" 
+                                id="modelYear" 
+                                formControlName="modelYear" class="form-control" 
+                                placeholder="Model"/>
+                            </div>
+                        </div>
+                        <div class="mb-3">
+                            <label for="description">Yeni Açıklama</label>
+                            <div class="form-group">
+                                <input type="text" 
+                                id="description" 
+                                formControlName="description" class="form-control" 
+                                placeholder="Açıklama"/>
+                            </div>
+                           </div>
+                        
+                    </form>
+                </div>
+                <div class="card-footer">
+                    <button class="btn btn-fill btn-success" (click)="update()" >
+                        Güncelle</button>
+                </div>
+            </div>
+            
+        </div>
+    </div>
+    </div>
+    </div>
