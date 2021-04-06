@@ -14,6 +14,9 @@ import { BrandDeleteComponent } from './components/delete/brand-delete/brand-del
 import { CarUpdateComponent } from './components/update/car-update/car-update.component';
 import { BrandUpdateComponent } from './components/update/brand-update/brand-update.component';
 import { ColorUpdateComponent } from './components/update/color-update/color-update.component';
+import { LoginComponent } from './components/login/login/login.component';
+import { LoginGuard } from './guards/login.guard';
+import { RegisterComponent } from './components/register/register.component';
 
 const routes: Routes = [
   {path:"",pathMatch:"full", component:CarComponent},
@@ -28,7 +31,7 @@ const routes: Routes = [
   {path:"cars/rental", component:RentalComponent},
   {path:"payment", component:PaymentComponent},
 
-  {path:"cars/add", component:CarAddComponent},
+  {path:"cars/add", component:CarAddComponent, canActivate:[LoginGuard]},
   {path:"brands/add", component:BrandAddComponent},
   {path:"colors/add", component:ColorAddComponent},
 
@@ -39,6 +42,9 @@ const routes: Routes = [
   {path:"cars/delete", component:CarDeleteComponent},
   {path:"brands/delete", component:BrandDeleteComponent},
   {path:"colors/delete", component:ColorDeleteComponent},
+ 
+  {path:"login", component:LoginComponent},
+  {path:"register", component:RegisterComponent},
 ];
 
 @NgModule({

@@ -41,7 +41,7 @@ export class CarComponent implements OnInit {
     this.carService.getCar().subscribe(response=>{
       this.cars = response.data
       this.dataLoaded = true
-      this.toastrService.success("Arabalar Listelendi")
+      this.toastrService.info("Arabalar Listelendi")
     }) 
   }
 
