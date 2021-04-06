@@ -1,1 +1,39 @@
-<p>car-delete works!</p>
+<div class="container">
+    <div class="content">
+        <div class="row">
+        <div class="col-md-3">  
+            <br>
+            <app-car-filter></app-car-filter>     
+            <br>
+            <app-brand></app-brand>  
+            <br><br>
+            <app-color></app-color> 
+            <br><br><br>
+          </div>
+        <div class="col-md-7">
+            <div class="card">
+                <div class="card-header"><h5 class="title">Araba Sil</h5></div>
+                <div class="card-body">
+                    <form [formGroup]="carDeleteForm">
+
+                        <div class="mb-3">
+                            <label for="carId">Silinecek Arabanın Id'si</label>
+                            <div class="form-group">
+                                <input type="number" 
+                                id="carId" 
+                                formControlName="carId" class="form-control" 
+                                placeholder="Silinecek Arabanın Id'si"/>
+                            </div>
+                        </div>                        
+                    </form>
+                </div>
+                <div class="card-footer">
+                    <button class="btn btn-fill btn-danger" (click)="delete()" >
+                        Sil</button>
+                </div>
+            </div>
+            
+        </div>
+    </div>
+    </div>
+    </div>
