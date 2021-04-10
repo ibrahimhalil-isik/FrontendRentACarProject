@@ -1,0 +1,63 @@
+<div class="container">
+  <div class="row">
+    <div class="col-md-3">
+      <br />
+      <app-car-filter></app-car-filter>
+      <br />
+      <app-brand></app-brand>
+      <br /><br />
+      <app-color></app-color>
+      <br /><br /><br />
+    </div>
+    <div class="col-md-9">
+      <button
+        *ngIf="dataLoaded == false"
+        class="btn btn-primary"
+        type="button"
+        disabled
+      >
+        <span
+          class="spinner-border spinner-border-sm"
+          role="status"
+          aria-hidden="true"
+        ></span>
+        Yükleniyor..
+      </button>
+      <br />
+      <header><b>Kullanıcı Bilgileri</b></header>
+      <table  *ngIf="dataLoaded==true" class="table">
+        <thead>
+          <tr>
+            <th
+              scope="col"
+              style="background-color: rgb(255, 154, 60); border-radius: 10px"
+            >
+            İsim
+            </th>
+            <th
+              scope="col"
+              style="background-color: rgb(255, 144, 50); border-radius: 10px"
+            >
+            Soyisim
+            </th>
+            <th
+              scope="col"
+              style="background-color: rgb(255, 134, 40); border-radius: 10px"
+            >
+            Email
+            </th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr >
+          <td>{{ users.firstName }}</td>
+          <td>{{ users.lastName }}</td>
+          <td>{{ users.email }}</td>
+          <td><button type="button" class="btn btn-info" routerLink="/users/update">Bilgilerini Güncelle</button></td>
+        </tr>
+      </tbody>
+      </table>
+
+    </div>
+  </div>
+</div>

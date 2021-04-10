@@ -16,24 +16,15 @@ import { RentalService } from 'src/app/services/rental/rental.service';
   styleUrls: ['./car-detail.component.css'],
 })
 export class CarDetailComponent implements OnInit {
-  cars: Car;
+  car: Car;
   carId: number;
   carImages: CarImage[];
   imageUrl: string = 'https://localhost:44305/';
   closeResult = '';
   rentDate: Date;
   returnDate: Date;
-  customers: Customer[] = [];
+  customers: Customer[] = []; 
   rentals: Rental[]= [];
-  carx: Car = {
-    carId: 0,
-    carName: '',
-    brandName: '',
-    colorName: '',
-    dailyPrice: 0,
-    modelYear: 0,
-    description: '',
-  };
 
   constructor(
     private activatedRoute: ActivatedRoute,
@@ -46,8 +37,7 @@ export class CarDetailComponent implements OnInit {
 
   ngOnInit(): void {
     this.activatedRoute.params.subscribe((params) => {
-      if (params['carId']) {
-        this.carId = params['carId'];
+      if (params['carId']) {      
         this.getCarDetailsByCarId(params['carId']);
         this.getCarImagesByCarId(params['carId']);        
         this.getRentals(params['carId']);
@@ -56,7 +46,7 @@ export class CarDetailComponent implements OnInit {
   }
   getCarDetailsByCarId(carId: number) {
     this.carService.getCarDetailsByCarId(carId).subscribe((response) => {
-     this.cars = response.data[0];
+     this.car = response.data[0];
       console.log(response.data);
     });
   }
@@ -64,7 +54,7 @@ export class CarDetailComponent implements OnInit {
   getCarImagesByCarId(carId: number) {
     this.carImageService.getCarImagesByCarId(carId).subscribe((response) => {
       this.carImages = response.data;
-      console.log(response);
+      //console.log(response);
     });
   }
 
@@ -75,7 +65,7 @@ export class CarDetailComponent implements OnInit {
 
   getCars() {
     this.carService.getCar().subscribe((response) => {
-      this.cars = response.data[0];
+      this.car = response.data[0];
     });
   }
 

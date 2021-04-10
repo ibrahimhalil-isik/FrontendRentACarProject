@@ -19,7 +19,6 @@ import { CarDetailComponent } from './components/car-detail/car-detail.component
 import { CarFilterComponent } from './components/car-filter/car-filter.component';
 
 import {ToastrModule} from "ngx-toastr";
-import { PaymentComponent } from './components/payment/payment.component';
 import { CarAddComponent } from './components/add/car-add/car-add.component';
 import { BrandAddComponent } from './components/add/brand-add/brand-add.component';
 import { ColorAddComponent } from './components/add/color-add/color-add.component';
@@ -33,6 +32,15 @@ import { LoginComponent } from './components/login/login/login.component';
 import { AuthInterceptor } from './interceptors/auth.interceptor';
 import { CarImageAddComponent } from './components/add/car-image-add/car-image-add/car-image-add.component';
 import { RegisterComponent } from './components/register/register.component';
+import { RentalAddComponent } from './components/add/rental-add/rental-add.component';
+import { OperationsComponent } from './components/operations/operations.component';
+import { CreditCardComponent } from './components/credit-card/credit-card.component';
+import { CreditCardAddComponent } from './components/add/credit-card-add/credit-card-add.component';
+import { CreditCardUpdateComponent } from './components/update/credit-card-update/credit-card-update.component';
+import { CreditCardDeleteComponent } from './components/delete/credit-card-delete/credit-card-delete.component';
+import { UserUpdateComponent } from './components/update/user-update/user-update.component';
+import { UserComponent } from './components/user/user.component';
+import { UserDeleteComponent } from './components/delete/user-delete/user-delete.component';
 
 
 @NgModule({
@@ -49,7 +57,6 @@ import { RegisterComponent } from './components/register/register.component';
     CarFilterPipePipe,
     CarDetailComponent,
     CarFilterComponent,
-    PaymentComponent,
     CarAddComponent,
     BrandAddComponent,
     ColorAddComponent,
@@ -62,6 +69,15 @@ import { RegisterComponent } from './components/register/register.component';
     LoginComponent,
     CarImageAddComponent,
     RegisterComponent,
+    RentalAddComponent,
+    OperationsComponent,
+    CreditCardComponent,
+    CreditCardAddComponent,
+    CreditCardUpdateComponent,
+    CreditCardDeleteComponent,
+    UserUpdateComponent,
+    UserComponent,
+    UserDeleteComponent,
   ],
   
   imports: [
@@ -72,7 +88,7 @@ import { RegisterComponent } from './components/register/register.component';
     BrowserAnimationsModule,
     ReactiveFormsModule,
     ToastrModule.forRoot({
-      positionClass:"toast-bottom-right"
+      positionClass:"toast-top-left"
     }),
   ],
 

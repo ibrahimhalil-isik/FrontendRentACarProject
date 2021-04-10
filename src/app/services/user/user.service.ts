@@ -23,4 +23,11 @@ export class UserService {
     return this.httpClient.get<SingleResponseModel<User>>(newUrl);
   }
 
+  update(user:User):Observable<ResponseModel>{
+    return this.httpClient.post<ResponseModel>(this.apiUrl+"update",user)
+    }
+    delete(user:User):Observable<ResponseModel>{
+      return this.httpClient.post<ResponseModel>(this.apiUrl+"delete",user)
+      }
+
 }

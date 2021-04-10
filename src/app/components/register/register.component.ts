@@ -46,6 +46,7 @@ export class RegisterComponent implements OnInit {
         this.getUserByEmail(registerModel.email);
         this.toastrService.info(response.message)
         this.router.navigate(['/login'])
+        this.toastrService.info("Giriş Sayfasına Yönlendiriliyorsunuz");
       }, responseError=>{
         console.error(responseError)
         this.toastrService.error(responseError.error);

@@ -31,7 +31,7 @@
     <select class="form-select" [(ngModel)]="colorIdFilter">
       <option
         *ngFor="let color of colors"
-        [value]="color.colorId"
+        [value]="color.colorId" 
         [selected]="getSelectedColor(color.colorId)"
       >
         {{ color.colorName }}

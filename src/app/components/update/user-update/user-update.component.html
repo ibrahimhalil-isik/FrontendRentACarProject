@@ -1,0 +1,105 @@
+<div class="container">
+    <div class="content">
+      <div class="row">
+        <div class="col-md-3">
+          <br />
+          <app-car-filter></app-car-filter>
+          <br />
+          <app-brand></app-brand>
+          <br /><br />
+          <app-color></app-color>
+          <br /><br /><br />
+        </div>
+        <div class="col-md-7">
+          <div class="card">
+            <div class="card-header"><h5 class="title">Kullanıcı Bilgilerini Güncelle</h5></div>
+            <div class="card-body">
+              <form [formGroup]="userUpdateForm">
+                <div class="mb-3">
+                    <label for="userId">Güncellenecek Kullanıcı Id'si</label>
+                    <div class="form-group">
+                      <input
+                        type="number"
+                        id="userId"
+                        formControlName="userId"
+                        class="form-control"
+                        placeholder="Güncellenecek Kullanıcının Id'si"
+                      />
+                    </div>
+                  </div>
+                <div class="mb-3">
+                  <label for="firstName">Yeni Kullanıcı Adı</label>
+                  <div class="form-group">
+                    <input
+                      type="text"
+                      id="firstName"
+                      formControlName="firstName"
+                      class="form-control"
+                      placeholder="Kullanıcı Adı"
+                    />
+                  </div>
+                </div>         
+                <div class="mb-3">
+                    <label for="lastName">Kullanıcı Soyadı</label>
+                    <div class="form-group">
+                      <input
+                        type="text"
+                        id="lastName"
+                        formControlName="lastName"
+                        class="form-control"
+                        placeholder="Kullanıcı Soyadı"
+                      />
+                    </div>
+                  </div>
+                  <div class="mb-3">
+                    <label for="email">Yeni mail adresi </label>
+                    <div class="form-group">
+                      <input
+                        type="text"
+                        id="email"
+                        formControlName="email"
+                        class="form-control"
+                        placeholder="email"
+                      />
+                    </div>
+                  </div>
+                  <div class="mb-3">
+                    <label for="">Eski Şifre</label>
+                    <div class="form-group">
+                      <input
+                        type="password"
+                        id=""
+                        formControlName=""
+                        class="form-control"
+                        placeholder="password"
+                      />
+                    </div>
+                  </div>
+                  <div class="mb-3">
+                    <label for="password">Yeni Şifre</label>
+                    <div class="form-group">
+                      <input
+                        type="password"
+                        id="password"
+                        formControlName="password"
+                        class="form-control"
+                        placeholder="password"
+                      />
+                    </div>
+                  </div>
+              </form>
+            </div>
+            <div class="card-footer">
+              <button class="btn btn-fill btn-outline-success" (click)="update()">
+                Güncelle
+              </button>              
+            </div>            
+          </div>
+          <br /><br /><br />
+          <app-user-delete></app-user-delete>
+          <br /><br /><br />
+        </div>    
+      </div>
+    </div>
+  </div>
+  

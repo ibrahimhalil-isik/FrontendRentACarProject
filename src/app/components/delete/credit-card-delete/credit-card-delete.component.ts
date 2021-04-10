@@ -1,37 +1,37 @@
 import { Component, OnInit } from '@angular/core';
 import {FormGroup,FormBuilder, FormControl, Validators} from "@angular/forms"
 import { ToastrService } from 'ngx-toastr';
-import { BrandService } from 'src/app/services/brand/brand.service';
+import { CreditCardService } from 'src/app/services/creditCard/credit-card.service';
 
 @Component({
-  selector: 'app-brand-delete',
-  templateUrl: './brand-delete.component.html',
-  styleUrls: ['./brand-delete.component.css']
+  selector: 'app-credit-card-delete',
+  templateUrl: './credit-card-delete.component.html',
+  styleUrls: ['./credit-card-delete.component.css']
 })
-export class BrandDeleteComponent implements OnInit {
-  brandDeleteForm : FormGroup;
- 
+export class CreditCardDeleteComponent implements OnInit {
+
+  creditCardDeleteForm : FormGroup;
+
   constructor(
     private formBuilder:FormBuilder, 
-    private brandService:BrandService,
+    private creditCardService:CreditCardService,
     private toastrService:ToastrService
   ) { }
 
   ngOnInit(): void {
-    this.createBrandDeleteForm();
+    this.createCreditCardDeleteForm();
   }
 
-  createBrandDeleteForm(){
-    this.brandDeleteForm = this.formBuilder.group({
-      brandId: ["",Validators.required],
-      
+  createCreditCardDeleteForm(){
+    this.creditCardDeleteForm = this.formBuilder.group({
+      creditCardId: ["",Validators.required],      
     })
  }
 
  delete(){
-  if(this.brandDeleteForm.valid){
-    let brandModel = Object.assign({},this.brandDeleteForm.value)
-    this.brandService.delete(brandModel).subscribe(response=>{
+  if(this.creditCardDeleteForm.valid){
+    let creditCardModel = Object.assign({},this.creditCardDeleteForm.value)
+    this.creditCardService.deleteCard(creditCardModel).subscribe(response=>{
       this.toastrService.success(response.message,"Başarılı")
     },responseError=>{
       if(responseError.error.Errors.length>0){

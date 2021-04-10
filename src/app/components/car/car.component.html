@@ -38,43 +38,43 @@
     <tr>
       <th
         scope="col"
-        style="background-color: rgb(174, 199, 214); border-radius: 10px"
+        style="background-color: rgb(255, 154, 60); border-radius: 10px"
       >
       Id
       </th>
       <th
         scope="col"
-        style="background-color: rgb(148, 199, 218); border-radius: 10px"
+        style="background-color: rgb(255, 144, 50); border-radius: 10px"
       >
       Araba
       </th>
       <th
         scope="col"
-        style="background-color: rgb(146, 214, 236); border-radius: 10px"
+        style="background-color: rgb(255, 134, 40); border-radius: 10px"
       >
       Marka
       </th>
       <th
         scope="col"
-        style="background-color: rgb(116, 207, 238); border-radius: 10px"
+        style="background-color: rgb(255, 124, 30); border-radius: 10px"
       >
       Renk
       </th>
       <th
         scope="col"
-        style="background-color: rgb(116, 207, 238); border-radius: 10px"
+        style="background-color: rgb(255, 114, 20);; border-radius: 10px"
       >
       Fiyat
       </th>
       <th
         scope="col"
-        style="background-color: rgb(116, 207, 238); border-radius: 10px"
+        style="background-color: rgb(255, 104, 10);; border-radius: 10px"
       >
       Model
       </th>
       <th
         scope="col"
-        style="background-color: rgb(116, 207, 238); border-radius: 10px"
+        style="background-color: rgb(255, 94, 0);; border-radius: 10px"
       >
       Açıklama
       </th>
@@ -90,7 +90,7 @@
     <td>{{ car.dailyPrice | currency: "₺" }}</td> 
     <td>{{ car.modelYear }}</td>
     <td>{{ car.description }}</td>
-    <td><button type="button" class="btn btn-outline-info" routerLink="/cars/carDetail/{{car.carId}}">Detay</button></td>
+    <td><button type="button" class="btn btn-info" routerLink="/cars/carDetail/{{car.carId}}">Detay</button></td>
   </tr>
 </tbody>
 </table>

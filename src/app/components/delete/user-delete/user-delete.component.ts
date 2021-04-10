@@ -1,37 +1,37 @@
 import { Component, OnInit } from '@angular/core';
 import {FormGroup,FormBuilder, FormControl, Validators} from "@angular/forms"
 import { ToastrService } from 'ngx-toastr';
-import { BrandService } from 'src/app/services/brand/brand.service';
+import { UserService } from 'src/app/services/user/user.service';
 
 @Component({
-  selector: 'app-brand-delete',
-  templateUrl: './brand-delete.component.html',
-  styleUrls: ['./brand-delete.component.css']
+  selector: 'app-user-delete',
+  templateUrl: './user-delete.component.html',
+  styleUrls: ['./user-delete.component.css']
 })
-export class BrandDeleteComponent implements OnInit {
-  brandDeleteForm : FormGroup;
- 
+export class UserDeleteComponent implements OnInit {
+
+  userDeleteForm : FormGroup;
+
   constructor(
     private formBuilder:FormBuilder, 
-    private brandService:BrandService,
+    private userService:UserService,
     private toastrService:ToastrService
   ) { }
 
   ngOnInit(): void {
-    this.createBrandDeleteForm();
+    this.createUserDeleteForm();
   }
 
-  createBrandDeleteForm(){
-    this.brandDeleteForm = this.formBuilder.group({
-      brandId: ["",Validators.required],
-      
+  createUserDeleteForm(){
+    this.userDeleteForm = this.formBuilder.group({
+      userId: ["",Validators.required],
     })
  }
 
  delete(){
-  if(this.brandDeleteForm.valid){
-    let brandModel = Object.assign({},this.brandDeleteForm.value)
-    this.brandService.delete(brandModel).subscribe(response=>{
+  if(this.userDeleteForm.valid){
+    let userModel = Object.assign({},this.userDeleteForm.value)
+    this.userService.delete(userModel).subscribe(response=>{
       this.toastrService.success(response.message,"Başarılı")
     },responseError=>{
       if(responseError.error.Errors.length>0){
