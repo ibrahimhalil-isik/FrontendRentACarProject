@@ -1,5 +1,8 @@
 # Rent A Car Project
+## Bilgilendirme
+- Bu proje, İbrahim Halil IŞIK tarafından Engin DEMİROĞ'un Kodlama.io sitesi üzerinden ücretsiz olarak yaptığı Yazılım Geliştirici Yetiştirme Kampı'nda verilen ödevler sonucunda geliştirilmiştir.
 
+- Kodlama.io : https://www.kodlama.io/
 
 # Pictures of the project
 
