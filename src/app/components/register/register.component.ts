@@ -44,6 +44,7 @@ export class RegisterComponent implements OnInit {
         console.log(response);
         localStorage.setItem("token",response.data.token);
         this.getUserByEmail(registerModel.email);
+        this.toastrService.success  ("Kaydınız başarı ile oluşturulmuştur","Başarılı")
         this.toastrService.info(response.message)
         this.router.navigate(['/login'])
         this.toastrService.info("Giriş Sayfasına Yönlendiriliyorsunuz");
@@ -62,20 +63,4 @@ export class RegisterComponent implements OnInit {
        this.user = response.data;
     });
  }
-
-  // register(){
-  //   if(this.registerForm.valid){
-  //     console.log(this.registerForm.value);
-  //     let registerModel = Object.assign({},this.registerForm.value)
-
-  //     this.authService.register(registerModel).subscribe(response=>{
-  //       this.toastrService.info(response.message),
-  //       this.toastrService.success("Giriş Başarılı")
-  //       localStorage.setItem("token",response.data.token)
-  //     },responseError=>{
-  //       this.toastrService.error(responseError.error)
-  //     })
-  //   }
-  // }
-
 }

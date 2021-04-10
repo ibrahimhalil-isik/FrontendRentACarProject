@@ -25,6 +25,7 @@ export class LoginGuard implements CanActivate {
       }else{
         this.router.navigate(["login"])
         this.toastrService.info("Sisteme giriş yapmalısınız")
+        this.toastrService.info("Giriş sayfasına yönlendiriliyorsunuz")
         return false;
       }
 
