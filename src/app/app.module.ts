@@ -19,6 +19,7 @@ import { CarDetailComponent } from './components/car-detail/car-detail.component
 import { CarFilterComponent } from './components/car-filter/car-filter.component';
 
 import {ToastrModule} from "ngx-toastr";
+<<<<<<< HEAD
 import { CarAddComponent } from './components/add/car-add/car-add.component';
 import { BrandAddComponent } from './components/add/brand-add/brand-add.component';
 import { ColorAddComponent } from './components/add/color-add/color-add.component';
@@ -41,6 +42,9 @@ import { CreditCardDeleteComponent } from './components/delete/credit-card-delet
 import { UserUpdateComponent } from './components/update/user-update/user-update.component';
 import { UserComponent } from './components/user/user.component';
 import { UserDeleteComponent } from './components/delete/user-delete/user-delete.component';
+=======
+import { FooterComponent } from './components/footer/footer.component';
+>>>>>>> 96a8a55145b72b80fdaa0b491aa3fc6ed8410cd4
 
 
 @NgModule({
@@ -57,6 +61,7 @@ import { UserDeleteComponent } from './components/delete/user-delete/user-delete
     CarFilterPipePipe,
     CarDetailComponent,
     CarFilterComponent,
+<<<<<<< HEAD
     CarAddComponent,
     BrandAddComponent,
     ColorAddComponent,
@@ -78,6 +83,9 @@ import { UserDeleteComponent } from './components/delete/user-delete/user-delete
     UserUpdateComponent,
     UserComponent,
     UserDeleteComponent,
+=======
+    FooterComponent,
+>>>>>>> 96a8a55145b72b80fdaa0b491aa3fc6ed8410cd4
   ],
   
   imports: [
