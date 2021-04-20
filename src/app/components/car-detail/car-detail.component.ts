@@ -74,5 +74,4 @@ export class CarDetailComponent implements OnInit {
     this.rentals = response.data
   })
 }
-
 }
