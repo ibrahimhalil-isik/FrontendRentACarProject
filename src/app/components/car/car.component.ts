@@ -58,13 +58,8 @@ export class CarComponent implements OnInit {
     });
   }
 
-<<<<<<< HEAD
   getCarDetailsByCarId(carId: number) {
     this.carService.getCarDetailsByCarId(carId).subscribe((response) => {
-=======
-  getCarDetailsByCarId(carId:number){
-    this.carService.getCarDetailsByCarId(carId).subscribe(response => {
->>>>>>> 96a8a55145b72b80fdaa0b491aa3fc6ed8410cd4
       this.cars = response.data;
       this.dataLoaded = true;
     });

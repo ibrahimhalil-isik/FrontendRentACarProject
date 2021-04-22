@@ -21,13 +21,9 @@ export class CarDetailComponent implements OnInit {
   carImages: CarImage[];
   imageUrl: string = 'https://localhost:44305/';
   closeResult = '';
-  rentDate: Date;
+  rentDate: Date; 
   returnDate: Date;
-<<<<<<< HEAD
   customers: Customer[] = []; 
-  rentals: Rental[]= [];
-=======
-  customers: Customer[] = [];
   rentals: Rental[]= [];
   carx: Car = {
     carId: 0,
@@ -38,7 +34,6 @@ export class CarDetailComponent implements OnInit {
     modelYear: 0,
     description: '',
   };
->>>>>>> 96a8a55145b72b80fdaa0b491aa3fc6ed8410cd4
 
   constructor(
     private activatedRoute: ActivatedRoute,
@@ -51,12 +46,7 @@ export class CarDetailComponent implements OnInit {
 
   ngOnInit(): void {
     this.activatedRoute.params.subscribe((params) => {
-<<<<<<< HEAD
       if (params['carId']) {      
-=======
-      if (params['carId']) {
-        this.carId = params['carId'];
->>>>>>> 96a8a55145b72b80fdaa0b491aa3fc6ed8410cd4
         this.getCarDetailsByCarId(params['carId']);
         this.getCarImagesByCarId(params['carId']);        
         this.getRentals(params['carId']);
@@ -65,13 +55,8 @@ export class CarDetailComponent implements OnInit {
   }
   getCarDetailsByCarId(carId: number) {
     this.carService.getCarDetailsByCarId(carId).subscribe((response) => {
-<<<<<<< HEAD
      this.car = response.data[0];
       console.log(response.data);
-=======
-     this.cars = response.data;
-      console.log(response);
->>>>>>> 96a8a55145b72b80fdaa0b491aa3fc6ed8410cd4
     });
   }
 
@@ -89,7 +74,6 @@ export class CarDetailComponent implements OnInit {
 
   getCars() {
     this.carService.getCar().subscribe((response) => {
-<<<<<<< HEAD
       this.car = response.data[0];
     });
   }
@@ -99,16 +83,4 @@ export class CarDetailComponent implements OnInit {
     this.rentals = response.data
   })
 }
-=======
-      this.cars = response.data;
-    });
-  }
-
- getRentals(carId: number) {
-  this.rentalService.getRental().subscribe(response=>{
-    this.rentals = response.data
-  })
-}
-
->>>>>>> 96a8a55145b72b80fdaa0b491aa3fc6ed8410cd4
 }

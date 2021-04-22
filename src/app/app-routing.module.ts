@@ -4,7 +4,6 @@ import { CarComponent } from './components/car/car.component';
 import {CarDetailComponent} from "./components/car-detail/car-detail.component";
 import { CarFilterComponent } from './components/car-filter/car-filter.component';
 import { RentalComponent } from './components/rental/rental.component';
-<<<<<<< HEAD
 import { CarAddComponent } from './components/add/car-add/car-add.component';
 import { BrandAddComponent } from './components/add/brand-add/brand-add.component';
 import { ColorAddComponent } from './components/add/color-add/color-add.component';
@@ -25,8 +24,6 @@ import { CreditCardUpdateComponent } from './components/update/credit-card-updat
 import { CreditCardDeleteComponent } from './components/delete/credit-card-delete/credit-card-delete.component';
 import { UserUpdateComponent } from './components/update/user-update/user-update.component';
 import { UserComponent } from './components/user/user.component';
-=======
->>>>>>> 96a8a55145b72b80fdaa0b491aa3fc6ed8410cd4
 
 const routes: Routes = [
   {path:"",pathMatch:"full", component:CarComponent},
@@ -40,7 +37,6 @@ const routes: Routes = [
   {path:"cars/filter/:brandId/:colorId", component:CarComponent},
 
   {path:"cars/rental", component:RentalComponent},
-<<<<<<< HEAD
   {path:"creditcard", component:CreditCardComponent, canActivate:[LoginGuard]},
 
   {path:"cars/add", component:CarAddComponent, canActivate:[LoginGuard]},
@@ -65,8 +61,6 @@ const routes: Routes = [
   {path:"login", component:LoginComponent},
   {path:"register", component:RegisterComponent},
   {path:"operations", component:OperationsComponent, canActivate:[LoginGuard]},
-=======
->>>>>>> 96a8a55145b72b80fdaa0b491aa3fc6ed8410cd4
 ];
 
 @NgModule({
