@@ -2,6 +2,8 @@ import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
 import { ToastrService } from 'ngx-toastr';
 import { Car } from 'src/app/models/car/car';
+import { CarImage } from 'src/app/models/carImage/carImage';
+import { CarImageServiceService } from 'src/app/services/car-image/car-image-service.service';
 import { CarService } from 'src/app/services/car/car.service';
 
 @Component({
@@ -13,9 +15,13 @@ export class CarComponent implements OnInit {
   cars: Car[] = [];
   dataLoaded = false;
   filterText = '';
-
+  carImages: Car[];
+  imageUrl: string = 'https://localhost:44305/';
+  imageBasePath: string = 'https://localhost:44305/';
+  defaultImg="/images/default.jpg"
   constructor(
     private carService: CarService,
+    private carImageService: CarImageServiceService,
     private activatedRoute: ActivatedRoute,
     private toastrService: ToastrService
   ) {}

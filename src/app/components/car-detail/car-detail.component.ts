@@ -25,15 +25,6 @@ export class CarDetailComponent implements OnInit {
   returnDate: Date;
   customers: Customer[] = []; 
   rentals: Rental[]= [];
-  carx: Car = {
-    carId: 0,
-    carName: '',
-    brandName: '',
-    colorName: '',
-    dailyPrice: 0,
-    modelYear: 0,
-    description: '',
-  };
 
   constructor(
     private activatedRoute: ActivatedRoute,
