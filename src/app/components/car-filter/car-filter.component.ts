@@ -14,6 +14,7 @@ export class CarFilterComponent implements OnInit {
   colors: Color[] = [];
   brandIdFilter: number;
   colorIdFilter: number;
+  filterText = '';
   constructor(
     private brandService: BrandService,
     private colorService: ColorService

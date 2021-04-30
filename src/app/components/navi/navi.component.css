@@ -1,10 +1,20 @@
 .text-white {
-    color: rgb(255, 255, 255)!important;
+    color: #EDF2F4(255, 255, 255)!important;
 }
 button{
-    background-color: #12a661;
-    border-color: #084e2d;
+    background-color: #EF233C;
+    border-color: #D80032;
 }
-#login{
+#login{ 
     margin-right: 10px;
 }
+
+.image{
+    margin-right: 25px;
+}
+.footer-rent h3 {
+    color: #EDF2F4;
+    font: normal 36px Cookie, cursive;
+    margin: 0;
+    margin-right: 40px;
+  }

@@ -41,6 +41,7 @@ import { CreditCardDeleteComponent } from './components/delete/credit-card-delet
 import { UserUpdateComponent } from './components/update/user-update/user-update.component';
 import { UserComponent } from './components/user/user.component';
 import { UserDeleteComponent } from './components/delete/user-delete/user-delete.component';
+import { FooterComponent } from './components/footer/footer.component';
 
 
 @NgModule({
@@ -78,6 +79,7 @@ import { UserDeleteComponent } from './components/delete/user-delete/user-delete
     UserUpdateComponent,
     UserComponent,
     UserDeleteComponent,
+    FooterComponent,
   ],
   
   imports: [

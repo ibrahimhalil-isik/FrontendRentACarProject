@@ -1,14 +1,5 @@
 <div class="container">
   <div class="row">
-    <div class="col-md-3">
-      <br />
-      <app-car-filter></app-car-filter>
-      <br />
-      <!-- <app-brand></app-brand>
-      <br /><br />
-      <app-color></app-color>
-      <br /><br /><br /> -->
-    </div>
     <div class="col-md-9">
       <button
         *ngIf="dataLoaded == false"
@@ -24,8 +15,12 @@
         Biraz Sabırlı Davran Kuzumm..
       </button>
       <br />
-      <header><b>ARABALAR</b></header>
-      <div class="mb-3">
+      <div class="text">
+        <header><b>ARABALAR</b></header>       
+      </div>
+      <br>
+      
+      <!-- <div class="mb-3">
         <label for="filterText" class="form-label">Araba Ara</label>
         <input
           type="text"
@@ -38,7 +33,7 @@
       <div *ngIf="filterText" class="alert alert-success">
         {{ filterText }} aranıyor.
       </div>
-      <!--
+      
       <table *ngIf="dataLoaded == true" class="table">
         <thead>
           <tr>
@@ -144,32 +139,80 @@
       </div>  -->
 
       <div class="row" *ngIf="dataLoaded == true">
-        <div *ngFor="let car of cars " class="card">
-          <img [src]="car.images.length !== 0 ? imageBasePath+ car.images[0] : imageBasePath + defaultImg"
-            class="card-img-top" alt="{{ car.description }} Image" width="100%" height="100%" />
-          <div class="card-body">
-            <h5 class="card-title">{{ car.brandName | uppercase }}</h5>
+        <div *ngFor="let car of cars | carFilterPipe: filterText" class="card">
+          <img
+            [src]="
+              car.images.length !== 0
+                ? imageBasePath + car.images[0]
+                : imageBasePath + defaultImg
+            "
+            class="card-img-top"
+            alt="{{ car.description }} Image"
+            width="100%"
+            height="100%"
+          />
+          <div id="brand" class="card-body">
+            <h5 class="card-title" style="color: #2b2d42">
+              {{ car.brandName | uppercase }}
+            </h5>
           </div>
           <ul class="list-group list-group-flush">
-            <li class="list-group-item">Renk: {{ car.colorName }}</li>
-            <li class="list-group-item">Model Yılı: {{ car.modelYear }}</li>
-            <li class="list-group-item">Fiyat: {{ car.dailyPrice |currency: "TRY":"symbol-narrow":"1.2-2" }}</li>
-            
+            <li class="list-group-item" style="color: #2b2d42">
+              Renk: {{ car.colorName }}
+            </li>
+            <li class="list-group-item" style="color: #2b2d42">
+              Model Yılı: {{ car.modelYear }}
+            </li>
+            <li class="list-group-item" style="color: #2b2d42">
+              Fiyat:
+              {{ car.dailyPrice | currency: "TRY":"symbol-narrow":"1.2-2" }}
+            </li>
           </ul>
           <div class="card-body">
             <section style="float: top">
-              <button routerLink="/cars/detail/{{ car.carId }}" type="button" class="btn btn-outline-success">
+              <button
+                routerLink="/cars/carDetail/{{ car.carId }}"
+                type="button"
+                class="btn btn-outline-light"
+                style="background-color: #d80032"
+              >
                 Detaylar
               </button>
-              <button routerLink="/rental/{{ car.carId }}" id="rentalButton" type="button"
-                class="btn btn-outline-success">
+              <button
+                routerLink="/rentals/add"
+                id="rentalButton"
+                type="button"
+                class="btn btn-outline-light"
+                style="background-color: #d80032"
+              >
                 Kirala
               </button>
             </section>
           </div>
         </div>
       </div>
-
+    </div>
+    <div class="col-md-3">
+      <div>
+        <label for="filterText" class="form-label"><b> Araba Ara </b></label>
+        <input
+          type="text"
+          [(ngModel)]="filterText"
+          class="form-control"
+          id="filterText"
+          placeholder="Bulmak istediğiniz Arabayı girin"
+        />
+      </div>
+      <div *ngIf="filterText" class="alert" style="color: #d80032">
+        {{ filterText }} aranıyor.
+      </div>
+     
+      <app-car-filter></app-car-filter>
+      <br />
+      <!-- <app-brand></app-brand>
+      <br /><br />
+      <app-color></app-color>
+      <br /><br /><br /> -->
     </div>
   </div>
 </div>
